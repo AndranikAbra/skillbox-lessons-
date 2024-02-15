@@ -1,15 +1,22 @@
 public class Display {
-    private final DisplayType displayType;
-    private final int displaySize;
-    private static double displayWeight;
+    private int getDisplayWeight;
+    private  DisplayType displayType;
+    private  int displaySize;
+    public double displayWeight;
 
-    public Display(DisplayType displayType, int displaySize, double displayWeight) {
+    public Display(DisplayType displayType, int displaySize,
+                   double displayWeight) {
         this.displayType = displayType;
         this.displaySize = displaySize;
         this.displayWeight = displayWeight;
+
     }
 
-    public  DisplayType getDisplayType() {
+    public void setDisplayWeight(double displayWeight){
+        this.displayWeight = displayWeight;
+    }
+
+    public DisplayType getDisplayType() {
         return displayType;
     }
 
@@ -17,7 +24,7 @@ public class Display {
         return displaySize;
     }
 
-    public static double getDisplayWeight() {
+    public double getDisplayWeight() {
         return displayWeight;
     }
 

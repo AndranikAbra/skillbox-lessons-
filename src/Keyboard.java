@@ -1,12 +1,12 @@
 public class Keyboard {
-    private final String keyboardType;
-    private final boolean keyboardLed;
+    private  String keyboardType;
+    private  boolean keyboardLed;
     private static double keyboardWeight;
 
     public Keyboard(String keyboardType, boolean keyboardLed, double keyboardWeight) {
-        this.keyboardType = keyboardType;
-        this.keyboardLed = keyboardLed;
-        this.keyboardWeight = keyboardWeight;
+        this.setKeyboardType(keyboardType);
+        this.setKeyboardLed(keyboardLed);
+        Keyboard.setKeyboardWeight(keyboardWeight);
     }
 
     public String getKeyboardType() {
@@ -24,8 +24,20 @@ public class Keyboard {
     public String toString() {
         return
                 "Клавиатура: " + "\n" +
-                        "Тип: " + keyboardType + "\n" +
-                        "Подсветка: " + keyboardLed + "\n" +
-                        "Вес: " + keyboardWeight + " гр." + "\n";
+                        "Тип: " + getKeyboardType() + "\n" +
+                        "Подсветка: " + isKeyboardLed() + "\n" +
+                        "Вес: " + getKeyboardWeight() + " гр." + "\n";
+    }
+
+    public void setKeyboardType(String keyboardType) {
+        this.keyboardType = keyboardType;
+    }
+
+    public void setKeyboardLed(boolean keyboardLed) {
+        this.keyboardLed = keyboardLed;
+    }
+
+    public static void setKeyboardWeight(double keyboardWeight) {
+        Keyboard.keyboardWeight = keyboardWeight;
     }
 }

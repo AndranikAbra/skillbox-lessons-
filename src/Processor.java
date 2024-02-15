@@ -1,16 +1,34 @@
 public class Processor {
-    private final double mhz;
-    private final int coreNum;
-    private final String processor;
+    private double mhz;
+    private int coreNum;
+
+    public void setMhz(double mhz) {
+        this.mhz = mhz;
+    }
+
+    public void setCoreNum(int coreNum) {
+        this.coreNum = coreNum;
+    }
+
+    public void setProcessor(String processor) {
+        this.processor = processor;
+    }
+
+    public static void setWeight(int weight) {
+        Processor.weight = weight;
+    }
+
+    private String processor;
     private static int weight;
 
-    public Processor(double mhz, int coreNum, String processor, int weight) {
+    public Processor(double mhz, int coreNum,
+                     String processor, int weight) {
         this.mhz = mhz;
         this.coreNum = coreNum;
         this.processor = processor;
-        this.weight = weight;
+        Processor.weight = weight;
     }
-    public Processor setMhz(double mhz) {
+   /* public Processor setMhz(double mhz) {
         return new Processor(mhz, coreNum, processor, weight);
     }
 
@@ -25,7 +43,7 @@ public class Processor {
     public Processor setWeight(int weight) {
         return new Processor(mhz, coreNum, processor, weight);
     }
-
+*/
     public double getMhz() {
         return mhz;
     }
